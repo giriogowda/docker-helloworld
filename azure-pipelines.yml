@@ -29,7 +29,15 @@ stages:
       name: default
       vmImage: $(vmImageName)
     steps:
-
+    - task: CodeScanCloudPrepare@1
+      inputs:
+        CodeScanCloud: 'codescan'
+        organization: 'girish-gowda89960'
+        scannerMode: 'CLI'
+        configMode: 'manual'
+        cliProjectKey: 'GIRIOGOWDA'
+        cliProjectName: 'sonar.gowdagirish222gg'
+        cliSources: '.'
     - task: CodeScanCloudPublish@1
       inputs:
         pollingTimeoutSec: '300'
