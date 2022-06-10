@@ -38,6 +38,8 @@ stages:
         cliProjectKey: 'GIRIOGOWDA'
         cliProjectName: 'sonar.gowdagirish222gg'
         cliSources: '.'
+
+    - task: CodeScanCloudAnalyze@1
     - task: CodeScanCloudPublish@1
       inputs:
         pollingTimeoutSec: '300'
